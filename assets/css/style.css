@@ -1,0 +1,29 @@
+.cardGrafico{
+    margin-top: 40px;
+}
+
+.navbg{
+    background-color: rgb(27,184,217);
+}
+
+.titulo{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif
+}
+
+.searchBar{
+    padding-left: 30%;
+    padding-right: 20%;
+    margin-bottom: 20px;
+}
+
+.titulografico{
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.txt-branco{
+    color: #fff !important;
+}
