@@ -7,7 +7,7 @@
 }
 
 .titulo{
-    color: #fff;
+    color: #fff !important;
     font-size: 20px;
     font-weight: bold;
     font-family: sans-serif
