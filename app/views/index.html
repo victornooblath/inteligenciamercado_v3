@@ -15,11 +15,11 @@
 <body>
   <nav class="navbar navbar-light navbg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand titulo">Inteligência de Mercado</a>
+      <a class="navbar-brand titulo">Inteligência de Mercado</a>    
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button>    
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
@@ -36,41 +36,42 @@
               <a class="nav-link" href="./formularios/particao.html">Partição de Mercado</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./usuario/register.html">Cadastrar Usuários</a>
+              <a class="nav-link" href="../formularios/competitividade.html">Competividade</a>
             </li>
-            <!--li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li-->
+            <li class="nav-item">
+              <a class="nav-link" href="./usuario/register.html">Cadastrar Usuários</a>
+            </li>       
           </ul>
-          <!--form class="d-flex">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Pesquisar</button>
-                          </div>
-                    </form-->
         </div>
       </div>
     </div>
   </nav>
-  <br /><br /><br /><br />
+  <br /><br />
+  <nav class="navbar bg-light mt-2">
+    <div class="container-fluid">
+      <a class="navbar-brand"></a>
+      <div class="btn-group dropstart">
+        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://github.com/mdo.png" alt="mdo" class="rounded-circle" width="32" height="32">
+        </a>
+        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+          <li><a class="dropdown-item" href="#" onclick="logout();">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br /><br />
+  
+  <div class="container">
+    <h4>DASHBOARD</h4>
+  </div>
   <div class="searchBar">
     <nav class="navbar navbar-light">
       <form class="container-fluid">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar"
             aria-describedby="button-addon2" />
-          <button class="btn btn-primary" type="button" id="button-addon2">
+          <button class="btn btn-info" type="button" id="button-addon2">
             <i class="fa-solid fa-magnifying-glass"></i>Pesquisar
           </button>
         </div>
@@ -80,13 +81,13 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="card">
-          <div class="card-body">
+        <div class="card text-center">
+          <div class="card-body txt-center">
             <div>
               <canvas id="chartCompetitividade"></canvas>
             </div>
-            <div class="card mt-2">
-              <h5 class="card-title titulografico">
+            <div class="card mt-2" style="width: 60%;">
+              <h5 class="card-title titulografico mt-2">
                 Gráfico 1 - Competitividade
               </h5>
             </div>
@@ -94,13 +95,13 @@
         </div>
       </div>
       <div class="col">
-        <div class="card">
+        <div class="card text-center">
           <div class="card-body">
             <div>
               <canvas id="chartPosicionamento"></canvas>
             </div>
-            <div class="card mt-2">
-              <h5 class="card-title titulografico">
+            <div class="card mt-2" style="width: 60%;">
+              <h5 class="card-title titulografico mt-2">
                 Gráfico 2 - Posicionamento
               </h5>
             </div>
@@ -110,25 +111,25 @@
     </div>
     <div class="row cardGrafico">
       <div class="col">
-        <div class="card">
+        <div class="card text-center">
           <div class="card-body">
             <div class="">
               <canvas id="chartSaleShare"></canvas>
             </div>
-            <div class="card mt-2">
-              <h5 class="card-title titulografico">Gráfico 3 - Sale Share</h5>
+            <div class="card mt-2" style="width: 60%;">
+              <h5 class="card-title titulografico mt-2">Gráfico 3 - Sale Share</h5>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card">
+        <div class="card text-center">
           <div class="card-body">
             <div class="">
               <canvas id="chartMarketSale"></canvas>
             </div>
-            <div class="card mt-2">
-              <h5 class="card-title titulografico">
+            <div class="card mt-2" style="width: 60%;">
+              <h5 class="card-title titulografico mt-2">
                 Gráfico 4 - Market Sale
               </h5>
             </div>
@@ -148,6 +149,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"
     integrity="sha512-5qbIAL4qJ/FSsWfIq5Pd0qbqoZpk5NcUVeAAREV2Li4EKzyJDEGlADHhHOSSCw0tHP7z3Q4hNHJXa81P92borQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/js/rotas.js"></script>
+  <script src="assets/js/site.js"></script>
   <script src="assets/js/dashboard.js"></script>
 </body>
 

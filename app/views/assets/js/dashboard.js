@@ -3,14 +3,17 @@ $(document).ready(function () {
     carregarMatrizParticao();
 });
 
-carregarMatrizParticao = function()
+carregarMatrizParticao = function(ano, cod_ies)
 {
+    ano = 2022;
+    cod_ies = '1817, 1487, 5403 , 1232, 1491';
+    var url = caminhoApi() + "/matrizParticipacao/getMatriz?ano="+ano+"&lista_cod_ies="+cod_ies;
     $.ajax({
-        url: "https://api-inteligenciamercado.herokuapp.com/api/v1/matrizParticipacao/getMatriz?ano=2022&lista_cod_ies=1817%2C%201487%2C%205403%20%2C%201232%2C%201491",
+        url: url,
         method: 'GET',
         dataType: "json",
-        contentType: " application/json",
-        headers: { "access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUzNjUyMGZhLWJiN2YtNTA1NS05ZjYyLTlhYjc2YjA5OTYwNSIsImNvZGUiOiI3NTIzMzhhNi04YzFmLTQ2NDEtOTljZS04MDgwZTcyYTViNzEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NTUwNzI4MTgsImV4cCI6MTY1NTY3NzYxOH0.lUnmOEUlyWXkAPGDQ16F_S8paSU_5QvxHiVNivp7Ckk" }
+        contentType: "application/json",
+        headers: { "access-token": localStorage.getItem('accessToken') }
         //data: JSON.stringify({ "msg": msg }),
     }).done(function (resp) {
         var matriz = resp.data.matriz;
@@ -73,13 +76,14 @@ function getRandomColor() {
     return color;
 }
 
-carregarMatrizCompetitividade = function () {
+carregarMatrizCompetitividade = function (pagina = 1) {
+    var url = caminhoApi() + "/matrizCompetitividade/getAll?page=" + pagina;
     $.ajax({
-        url: "https://api-inteligenciamercado.herokuapp.com/api/v1/matrizCompetitividade/getAll?page=1",
+        url: url,
         method: 'GET',
         dataType: "json",
         contentType: " application/json",
-        headers: { "access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUzNjUyMGZhLWJiN2YtNTA1NS05ZjYyLTlhYjc2YjA5OTYwNSIsImNvZGUiOiI3NTIzMzhhNi04YzFmLTQ2NDEtOTljZS04MDgwZTcyYTViNzEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NTUwNzI4MTgsImV4cCI6MTY1NTY3NzYxOH0.lUnmOEUlyWXkAPGDQ16F_S8paSU_5QvxHiVNivp7Ckk" }
+        headers: { "access-token": localStorage.getItem('accessToken')}
         //data: JSON.stringify({ "msg": msg }),
     }).done(function (resp) {
         var igc = [];
